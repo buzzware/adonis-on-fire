@@ -2,6 +2,9 @@ import 'reflect-metadata'
 //import sourceMapSupport from 'source-map-support'
 import { Ignitor } from '@adonisjs/core/build/standalone'
 
+import * as functions from "firebase-functions";
+//import Logger from '@ioc:Adonis/Core/Logger'
+
 //const functions = require('@google-cloud/functions-framework');
 // // import 'reflect-metadata'
 // const {Ignitor} = require('@adonisjs/core/build/standalone');
@@ -26,23 +29,34 @@ async function bootstrapServer() {
   return server
 }
 
-
-exports.helloWorld = async (req, res) => {
-  // res.send('Hello, World');
-
-  // new Ignitor(__dirname)
-  //   .httpServer()
-  //   .createServer(function(req,res){
-  //
-  //   })
-
+export const adonis = functions.https.onRequest(async (req, res) => {
+  //Logger.info('start');
+  console.log('start');
   if (!index) {
+    console.log('before bootstrapServer');
     index = await bootstrapServer()
+    console.log('after bootstrapServer');
   }
 
   // const { request, response } = Serverlessize(args)
-  return index(req, res);
-};
+  console.log('before index');
+  var result = index(req, res);
+  console.log('after index');
+  return result;
+})
+
+// // Start writing Firebase Functions
+// // https://firebase.google.com/docs/functions/typescript
+//
+// export const helloWorld = functions.https.onRequest((request, response) => {
+//   functions.logger.info("Hello logs!", {structuredData: true});
+//   response.send("Hello from Firebase!");
+// });
+
+
+
+
+
 
 
 

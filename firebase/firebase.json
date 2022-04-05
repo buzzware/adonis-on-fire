@@ -6,16 +6,17 @@
   "functions": {
     "predeploy": [
       //"npm --prefix \"$RESOURCE_DIR\" run lint",
-      "npm --prefix \"$RESOURCE_DIR\" run build"
+      //"npm --prefix \"$RESOURCE_DIR\" run build"
     ],
     "source": "functions"
   },
   "hosting": {
-    "public": "functions/build/public",
+    "public": "functions/lib/public",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "functions/src"
     ],
     "rewrites": [
       {
@@ -28,7 +29,7 @@
       },
       {
         "source": "/**",
-        "function": "helloWorld"
+        "function": "adonis"
       }
     ]
   },

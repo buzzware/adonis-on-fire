@@ -3,7 +3,7 @@
   "include": ["**/*"],
   "exclude": ["node_modules", "build"],
   "compilerOptions": {
-    "outDir": "../build",
+    "outDir": "../lib",
     "rootDir": "./",
     "sourceMap": true,
     "paths": {
