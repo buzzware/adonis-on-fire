@@ -144,14 +144,15 @@
 // const firebase = new FirebaseExtraAdmin(config,firebaseSdk,adminSdk,serviceCredentials);
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const initialize = require('../../initialize');
+//const initialize = require('../../initialize');
 
-export default initialize;
+//export initialize.firebase as firebase;
 
+export * from '../../initialize';
 
 // export {
-//   firebase,
-//   config,
-//   serviceCredentials,
-//   functionsTest,
+//   firebase: initialize.firebase,
+//   config: initialize.config,
+//   serviceCredentials: initialize.serviceCredentials,
+//   functionsTest: initialize.functionsTest,
 // };
