@@ -1,0 +1,14 @@
+{
+  "projectId": "adonis-on-fire",
+  "appId": "1:195909324805:web:e1c39280be9ab9a4bd4c6c",
+  "apiKey": "AIzaSyDwKoym7XPzo9oSeB4MoNSl9JDcUJAuKYI",
+  "authDomain": "adonis-on-fire.firebaseapp.com",
+  "storageBucket": "adonis-on-fire.appspot.com",
+  "messagingSenderId": "195909324805",
+  "databaseURL": "https://adonis-on-fire.firebaseio.com",
+  "publicHost": null,
+  "verifiedDomain": null,
+  "private": {
+    "serviceCredentialsFile": "/Users/gary/.firebase/adonis-on-fire-firebase-adminsdk-qvddb-e7b22a7e67.json"
+  }
+}
