@@ -5,7 +5,14 @@
  * file.
  */
 
-import DbUser from 'App/Models/DbUser'
+//import { SessionGuardConfig } from '@ioc:Adonis/Addons/Auth'
+import { OATGuardConfig } from '@ioc:Adonis/Addons/Auth'
+import { OATGuardContract } from '@ioc:Adonis/Addons/Auth'
+//import { SessionGuardContract } from '@ioc:Adonis/Addons/Auth'
+import type {
+  FirebaseAuthProvider,
+  FirebaseAuthProviderConfig,
+} from '../providers/FirebaseAuthProvider'
 
 declare module '@ioc:Adonis/Addons/Auth' {
   /*
@@ -34,9 +41,17 @@ declare module '@ioc:Adonis/Addons/Auth' {
     |
     */
     user: {
-      implementation: LucidProviderContract<typeof DbUser>
-      config: LucidProviderConfig<typeof DbUser>
+      implementation: FirebaseAuthProvider
+      config: FirebaseAuthProviderConfig
     }
+    // user: {
+    //   implementation: LucidProviderContract<typeof User>,
+    //   config: LucidProviderConfig<typeof User>,
+    // },
+    // apps: {
+    //   implementation: LucidProviderContract<typeof App>,
+    //   config: LucidProviderConfig<typeof App>,
+    // }
   }
 
   /*
@@ -55,6 +70,12 @@ declare module '@ioc:Adonis/Addons/Auth' {
   |
   */
   interface GuardsList {
+
+    // web: {
+    //   implementation: SessionGuardContract<'user', 'web'>
+    //   config: SessionGuardConfig<'user'>
+    // }
+
     /*
     |--------------------------------------------------------------------------
     | OAT Guard
