@@ -18,7 +18,7 @@ const _ = require('lodash');
 // const feathers_errors = require("@feathersjs/errors");
 // const logger = require('./logger');
 //const GoogleErrorReporting = require('./utilities/GoogleErrorReporting');
-const {ErrorControl,HttpErrors} = require('error-control');
+// const {ErrorControl,HttpErrors} = require('error-control');
 
 const {Storage} = require('@google-cloud/storage');
 
@@ -194,12 +194,12 @@ let firebase = new FirebaseExtraAdmin(config,firebaseSdk,adminSdk,serviceCredent
 // }
 // ErrorControl.default.prependFilter(new FeathersErrorFilter());
 
-class ConsoleErrorReporter {
-	report(aError,aUser=null) {
-		console.error(aError);
-	}
-}
-ErrorControl.default.appendReporter(new ConsoleErrorReporter());
+// class ConsoleErrorReporter {
+// 	report(aError,aUser=null) {
+// 		console.error(aError);
+// 	}
+// }
+// ErrorControl.default.appendReporter(new ConsoleErrorReporter());
 //ErrorControl.default.appendReporter(new GoogleErrorReporting({projectId: config.projectId, credentials: serviceCredentials, ignoreEnvironmentCheck: true}));
 
 module.exports = {

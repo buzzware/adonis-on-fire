@@ -20,7 +20,6 @@
   "main": "build/index.js",
   "dependencies": {
     "yargs": "^12.0.1",
-    "error-control": "^0.2.5",
     "lodash": "^4.17.20",
     "luxon": "^1.25.0",
     "@adonisjs/core": "^5.7.5",
